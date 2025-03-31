@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +13,7 @@ import About from "./pages/About";
 import AIAgents from "./pages/AIAgents";
 import SignIn from "./pages/SignIn";
 import Contact from "./pages/Contact";
+import FinancialGlossary from "./pages/FinancialGlossary";
 
 // Category Pages
 import PersonalFinance from "./pages/categories/PersonalFinance";
@@ -47,6 +49,7 @@ const App = () => {
             {/* Knowledge Base Routes */}
             <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
             <Route path="/knowledge-base/article/:slug" element={<ArticlePage />} />
+            <Route path="/glossary" element={<FinancialGlossary />} />
             
             {/* Calculator Routes */}
             <Route path="/calculators" element={<Calculators />} />
