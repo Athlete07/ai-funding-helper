@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Search, BookOpen, ArrowRight, MessageSquare, Bookmark, Info } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { GlossaryAI } from '@/components/GlossaryAI';
 
 // Define the glossary term type
 interface GlossaryTerm {
@@ -339,98 +340,7 @@ const FinancialGlossary = () => {
           </div>
           
           <div className="lg:col-span-1">
-            <Card className="sticky top-24">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <BookOpen className="h-5 w-5 text-finance-green" />
-                  <h3 className="font-semibold text-lg">Ask FinAI</h3>
-                </div>
-                
-                <p className="text-sm text-muted-foreground mb-4">
-                  Need help understanding a financial concept? Ask our AI assistant for plain-language explanations.
-                </p>
-                
-                <div className="space-y-4">
-                  <Input
-                    placeholder="What financial term can I explain?"
-                    value={userQuery}
-                    onChange={(e) => setUserQuery(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleAiQuery()}
-                  />
-                  
-                  <Button 
-                    onClick={handleAiQuery} 
-                    className="w-full"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <>
-                        <span className="animate-spin mr-2">⊚</span>
-                        Thinking...
-                      </>
-                    ) : (
-                      <>
-                        <MessageSquare className="mr-2 h-4 w-4" />
-                        Get Explanation
-                      </>
-                    )}
-                  </Button>
-                  
-                  {aiResponse && (
-                    <div className="mt-4 p-4 bg-muted rounded-md">
-                      <ScrollArea className="h-[300px]">
-                        <div className="prose prose-sm max-w-none">
-                          {aiResponse.split('\n\n').map((paragraph, index) => (
-                            <p key={index} className={index === 0 ? "font-medium" : ""}>
-                              {paragraph}
-                            </p>
-                          ))}
-                        </div>
-                      </ScrollArea>
-                    </div>
-                  )}
-                  
-                  <div className="mt-4">
-                    <h4 className="font-medium text-sm mb-2">Suggested Questions:</h4>
-                    <div className="space-y-2">
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="w-full justify-start text-left"
-                        onClick={() => {
-                          setUserQuery("What's the difference between a Roth IRA and Traditional IRA?");
-                          handleAiQuery();
-                        }}
-                      >
-                        What's the difference between a Roth IRA and Traditional IRA?
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="w-full justify-start text-left"
-                        onClick={() => {
-                          setUserQuery("Explain compound interest in simple terms");
-                          handleAiQuery();
-                        }}
-                      >
-                        Explain compound interest in simple terms
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="w-full justify-start text-left"
-                        onClick={() => {
-                          setUserQuery("What's a good debt-to-income ratio?");
-                          handleAiQuery();
-                        }}
-                      >
-                        What's a good debt-to-income ratio?
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <GlossaryAI glossaryTerms={sortedTerms.map(term => term.term)} />
           </div>
         </div>
       </div>
