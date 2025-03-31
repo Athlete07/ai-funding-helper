@@ -121,6 +121,7 @@ const HomeLoanEMICalculator = () => {
       title="Home Loan EMI Calculator"
       description="Calculate and visualize your home loan EMI and total payments"
       icon={<Home className="h-6 w-6" />}
+      calculatorType="home-loan-emi"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-8">

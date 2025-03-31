@@ -6,19 +6,22 @@ import { Card } from '@/components/ui/card';
 import { Download, Mail, ArrowLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from '@/hooks/use-toast';
+import { CalculatorAI } from '@/components/CalculatorAI';
 
 interface CalculatorLayoutProps {
   children: React.ReactNode;
   title: string;
   description: string;
   icon: React.ReactNode;
+  calculatorType?: 'sip' | 'home-loan-emi' | 'retirement' | 'tax' | 'other';
 }
 
 export const CalculatorLayout: React.FC<CalculatorLayoutProps> = ({
   children,
   title,
   description,
-  icon
+  icon,
+  calculatorType = 'other'
 }) => {
   const navigate = useNavigate();
   
@@ -99,6 +102,9 @@ export const CalculatorLayout: React.FC<CalculatorLayoutProps> = ({
           </div>
         </div>
       </div>
+      
+      {/* Add AI Assistant */}
+      <CalculatorAI calculatorType={calculatorType} />
     </MainLayout>
   );
 };

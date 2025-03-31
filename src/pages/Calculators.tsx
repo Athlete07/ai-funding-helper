@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MainLayout } from '@/layouts/MainLayout';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -94,7 +93,7 @@ const calculatorCategories = [
         description: 'Calculate your income tax liability',
         icon: <Calculator className="h-5 w-5 text-finance-green" />,
         path: '/calculators/income-tax',
-        implemented: false
+        implemented: true
       },
       {
         title: 'Capital Gains Tax Calculator',
@@ -125,12 +124,12 @@ const featuredCalculators = [
     implemented: true
   },
   {
-    title: 'Retirement Corpus Calculator',
-    description: 'Estimate how much you need to save regularly to build your desired retirement corpus.',
-    icon: <PiggyBank className="h-6 w-6 text-finance-green" />,
-    path: '/calculators/retirement-corpus',
+    title: 'Income Tax Calculator',
+    description: 'Compare tax liability under old and new regimes to optimize your tax savings.',
+    icon: <Calculator className="h-6 w-6 text-finance-green" />,
+    path: '/calculators/income-tax',
     popular: true,
-    implemented: false
+    implemented: true
   }
 ];
 

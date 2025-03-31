@@ -108,6 +108,7 @@ const SIPCalculator = () => {
       title="SIP Calculator"
       description="Calculate returns on your systematic investment plans"
       icon={<BarChart3 className="h-6 w-6" />}
+      calculatorType="sip"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-8">
