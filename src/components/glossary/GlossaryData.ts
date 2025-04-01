@@ -1,4 +1,3 @@
-
 // Define the glossary term type
 export interface GlossaryTerm {
   id: string;
@@ -20,7 +19,7 @@ export const glossaryData: GlossaryTerm[] = [
   {
     id: '2',
     term: 'Asset Allocation',
-    definition: 'The process of dividing investments among different kinds of assets, such as stocks, bonds, and cash, to optimize the risk/reward trade-off based on an individual's specific situation and goals.',
+    definition: "The process of dividing investments among different kinds of assets, such as stocks, bonds, and cash, to optimize the risk/reward trade-off based on an individual's specific situation and goals.",
     category: 'investing',
     level: 'intermediate'
   },
