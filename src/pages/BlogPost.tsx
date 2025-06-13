@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MainLayout } from '@/layouts/MainLayout';
 import { useParams, Link } from 'react-router-dom';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calendar, Clock, Share2, Bookmark, ThumbsUp, MessageSquare, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Share2, Bookmark, ThumbsUp, MessageSquare, Tag, ArrowRight } from 'lucide-react';
 
 // Blog post data
 const blogPosts = {
