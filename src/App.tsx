@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import KnowledgeBasePage from "./pages/KnowledgeBase";
 import ArticlePage from "./pages/ArticlePage";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Calculators from "./pages/Calculators";
 import About from "./pages/About";
 import AIAgents from "./pages/AIAgents";
@@ -50,6 +52,10 @@ const App = () => {
             <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
             <Route path="/knowledge-base/article/:slug" element={<ArticlePage />} />
             <Route path="/glossary" element={<FinancialGlossary />} />
+            
+            {/* Blog Routes */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             
             {/* Calculator Routes */}
             <Route path="/calculators" element={<Calculators />} />
